@@ -16,6 +16,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    gameWatchlist: [{type: Schema.Types.ObjectId, ref: "VideoGame"}],
+    tcgWatchlist: [{type: Schema.Types.ObjectId, ref: "PokemonCard"}],
+    mangaWatchlist: [{type: Schema.Types.ObjectId, ref: "MangaIssue"}],
+    sportWatchlist: [{type: Schema.Types.ObjectId, ref: "SportCard"}],
+    submissions: [{type: Schema.Types.ObjectId, ref: "Submissions"}]
   },
   {
     timeseries: true,
