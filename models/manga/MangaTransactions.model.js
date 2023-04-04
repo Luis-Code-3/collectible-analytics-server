@@ -1,3 +1,4 @@
+const { Schema, model } = require("mongoose");
 
 const mangaTransactionsSchema = new Schema(
     {

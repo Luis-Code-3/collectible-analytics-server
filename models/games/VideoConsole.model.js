@@ -3,12 +3,16 @@ const { Schema, model } = require("mongoose");
 const videoConsoleSchema = new Schema(
   {
     consoleName: {
-    type: String,
-    required: true,
+        type: String,
+        required: true,
+    },
+    company: {
+        type: String,
+        required: true
     },
     imageUrl: {
-    type: String,
-    required: true,
+        type: String,
+        required: true,
     },
     region: {
       type: String,

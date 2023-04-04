@@ -8,6 +8,10 @@ var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var tcgRotuer = require('./routes/tcg');
+var videogamesRouter = require('./routes/videogames');
+var mangaRouter = require('./routes/manga');
+var sportcardRouter = require('./routes/sportcard');
 
 var app = express();
 
@@ -28,6 +32,10 @@ app.use(
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/tcg', tcgRotuer);
+app.use('/videogames', videogamesRouter);
+app.use('/manga', mangaRouter);
+app.use('/sportcards', sportcardRouter);
 
 app.use(function(req, res, next) {
     next(createError(404));
