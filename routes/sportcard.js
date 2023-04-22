@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 const SportCard = require('../models/sports/SportCard.model');
-const SportGenre = require('../models/sports/SportGenre.model');
 const SportPlayer = require('../models/sports/SportPlayer.model');
 const SportTransactions = require('../models/sports/SportTransactions.model');
 
@@ -17,8 +16,7 @@ router.get('/players', function(req, res) {
 });
 
 router.get('/players/:playerId', function(req, res) {
-  SportPlayer.findById(req.params.playerId)
-  .populate('cards_id')
+  SportPlayer.find({playerName: req.params.playerId.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())})
   .then((foundPlayer) => {
     res.json(foundPlayer);
   })
@@ -27,24 +25,13 @@ router.get('/players/:playerId', function(req, res) {
   })
 });
 
-router.get('/genre', function(req, res) {
-    SportGenre.find()
-    .then((foundGenres) => {
-      res.json(foundGenres)
+router.get('/player-cards/:playerId', function(req, res) {
+    SportCard.find({playerName: req.params.playerId.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())})
+    .then((foundCards) => {
+        res.json(foundCards);
     })
     .catch((err) => {
-      console.log(err);
-    })
-});
-  
-router.get('/genre/:genreId', function(req, res) {
-    SportGenre.findById(req.params.genreId)
-    .populate('cards_id')
-    .then((foundGenre) => {
-      res.json(foundGenre);
-    })
-    .catch((err) => {
-      console.log(err);
+        console.log(err);
     })
 });
 

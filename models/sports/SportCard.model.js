@@ -2,6 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const sportCardSchema = new Schema(
   {
+    itemType: {
+        type: String,
+        required: true,
+    },
     playerName: {
       type: String,
       required: true,
@@ -17,10 +21,6 @@ const sportCardSchema = new Schema(
     cardType: {
       type: String,
       required: true,
-    },
-    cardYear: {
-        type: Number,
-        required: true
     },
     imageUrl: {
         type: String,

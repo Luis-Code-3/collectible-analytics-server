@@ -15,18 +15,28 @@ router.get('/set', function(req, res) {
   })
 });
 
+// router.get('/set/:setId', function(req, res) {
+//   PokemonSet.findById(req.params.setId)
+//   .then((foundSet) => {
+//     res.json(foundSet);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   })
+// });
+
 router.get('/set/:setId', function(req, res) {
-  PokemonSet.findById(req.params.setId)
-  .then((foundSet) => {
-    res.json(foundSet);
-  })
-  .catch((err) => {
-    console.log(err);
-  })
-});
+    PokemonSet.find({setName: req.params.setId.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())})
+    .then((foundSet) => {
+      res.json(foundSet);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  });
 
 router.get('/set-cards/:setId', function(req, res) {
-    PokemonCard.find({setId: req.params.setId})
+    PokemonCard.find({setName: req.params.setId.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())})
     .then((foundCards) => {
         res.json(foundCards);
     })

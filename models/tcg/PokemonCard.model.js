@@ -2,6 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const pokemonCardSchema = new Schema(
   {
+    itemType: {
+    type: String,
+    required: true
+    },
     cardName: {
     type: String,
     required: true,
@@ -22,14 +26,6 @@ const pokemonCardSchema = new Schema(
     setId: {type: Schema.Types.ObjectId, ref: "PokemonSet"},
     setName: {
         type: String,
-        required: true
-    },
-    pokemonName: {
-      type: String,
-      required: true,
-    },
-    cardYear: {
-        type: Number,
         required: true
     }
   },
