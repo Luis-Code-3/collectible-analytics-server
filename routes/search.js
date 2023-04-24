@@ -106,5 +106,29 @@ router.get('/similar-items/:itemType', async (req, res) => {
     }
 });
 
+async function combinedSearch(query) {
+    const [pokemonCards, sportCards, mangaItems, videoGames] = await Promise.all([
+      PokemonCard.search(query),
+      SportCard.search(query),
+      MangaItem.search(query),
+      VideoGame.search(query)
+    ]);
+  
+    return [
+        ...pokemonCards,
+        ...sportCards,
+        ...mangaItems,
+        ...videoGames
+    ]
+    ;
+  }
+
+router.get('/search-bar/check', async (req,res) => {
+    const query = req.query.q;
+    //console.log(query);
+    const results = await combinedSearch(query);
+    res.json(results);
+})
+
 
 module.exports = router;

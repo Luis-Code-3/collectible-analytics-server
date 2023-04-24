@@ -1,3 +1,4 @@
+const mongoose = require('mongoose')
 const { Schema, model } = require("mongoose");
 
 const mangaItemSchema = new Schema(
@@ -25,6 +26,24 @@ const mangaItemSchema = new Schema(
     timestamps: true,
   }
 );
+
+mangaItemSchema.statics.search = async function(query) {
+  // console.log(query);
+  const terms = query.split(' ').map(term => {
+    return new RegExp(term, 'i');
+  });
+
+  return this.find({
+    $and: terms.map(term => {
+      return {
+        $or: [
+          { title: { $regex: term } },
+          { volumeName: { $regex: term } },
+        ],
+      };
+    }),
+  });
+};
 
 const MangaItem = model("MangaItem", mangaItemSchema);
 
