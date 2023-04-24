@@ -11,14 +11,9 @@ const mangaTransactionsSchema = new Schema(
         type: String,
         required: true
       },
-      gradeName: {
+      grade: {
         type: String,
-      },
-      gradeNumber: {
-        type: Number,
-      },
-      condition: {
-        type: String,
+        required: true
       },
       salePrice: {
         type: Number,

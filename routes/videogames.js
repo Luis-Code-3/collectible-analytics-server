@@ -15,18 +15,28 @@ router.get('/console', function(req, res) {
   })
 });
 
+// router.get('/console/:consoleId', function(req, res) {
+//   VideoConsole.findById(req.params.consoleId)
+//   .then((foundConsole) => {
+//     res.json(foundConsole);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   })
+// });
+
 router.get('/console/:consoleId', function(req, res) {
-  VideoConsole.findById(req.params.consoleId)
-  .then((foundConsole) => {
-    res.json(foundConsole);
-  })
-  .catch((err) => {
-    console.log(err);
-  })
-});
+    VideoConsole.find({consoleName: req.params.consoleId.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())})
+    .then((foundConsole) => {
+      res.json(foundConsole);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  });
 
 router.get('/console-games/:consoleId', function(req, res) {
-    VideoGame.find({consoleId: req.params.consoleId})
+    VideoGame.find({consoleName: req.params.consoleId.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())})
     .then((foundGames) => {
         res.json(foundGames);
     })

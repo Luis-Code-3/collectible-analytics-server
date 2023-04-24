@@ -14,10 +14,6 @@ const videoConsoleSchema = new Schema(
         type: String,
         required: true,
     },
-    region: {
-      type: String,
-      required: true,
-    },
     releaseDate: {
       type: String,
       required: true,
@@ -27,10 +23,6 @@ const videoConsoleSchema = new Schema(
       required: true,
     },
     gameCount: {
-        type: String,
-        required: true
-    },
-    consoleYear: {
         type: Number,
         required: true
     }

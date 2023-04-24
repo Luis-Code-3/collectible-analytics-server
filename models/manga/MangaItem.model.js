@@ -2,15 +2,13 @@ const { Schema, model } = require("mongoose");
 
 const mangaItemSchema = new Schema(
   {
+    itemType: {
+      type: String,
+      required: true
+    },
     title: {
         type: String,
         required: true,
-    },
-    issueNumber: {
-        type: Number,
-    },
-    magazineNumber: {
-        type: String,
     },
     imageUrl: {
         type: String,
@@ -21,12 +19,6 @@ const mangaItemSchema = new Schema(
         type: String,
         required: true
     },
-    releaseDate: {
-        type: Number,
-    },
-    releaseYear: {
-      type: Number
-    }
   },
   {
     timeseries: true,

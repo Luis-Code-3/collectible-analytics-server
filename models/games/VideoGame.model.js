@@ -2,6 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const videoGameSchema = new Schema(
   {
+    itemType: {
+        type: String,
+        required: true
+    },
     title: {
     type: String,
     required: true,
@@ -9,10 +13,6 @@ const videoGameSchema = new Schema(
     imageUrl: {
     type: String,
     required: true
-    },
-    region: {
-      type: String,
-      required: true,
     },
     consoleId: {type: Schema.Types.ObjectId, ref: "VideoConsole"},
     consoleName: {

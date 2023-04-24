@@ -3,19 +3,17 @@ const { Schema, model } = require("mongoose");
 const videoTransactionsSchema = new Schema(
   {
     game_id: {type: Schema.Types.ObjectId, ref: "VideoGame"},
+    title: {
+    type: String,
+    required: true
+    },
     marketplace: {
     type: String,
     required: true
     },
-    gradeName: {
+    grade: {
       type: String,
-    },
-    gradeNumber: {
-      type: Number,
-    },
-    condition: {
-        type: String,
-        required: true
+      required: true
     },
     salePrice: {
         type: Number,

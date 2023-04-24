@@ -16,7 +16,7 @@ router.get('/volume', function(req, res) {
 });
 
 router.get('/volume/:volumeId', function(req, res) {
-  MangaVolume.findById(req.params.volumeId)
+  MangaVolume.find({title: req.params.volumeId.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())})
   .then((foundVolume) => {
     res.json(foundVolume);
   })
@@ -26,7 +26,7 @@ router.get('/volume/:volumeId', function(req, res) {
 });
 
 router.get('/volume-items/:volumeId', function(req, res) {
-    MangaItem.find({volumeId: req.params.volumeId})
+    MangaItem.find({volumeName: req.params.volumeId.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())})
     .then((foundItems) => {
         res.json(foundItems);
     })

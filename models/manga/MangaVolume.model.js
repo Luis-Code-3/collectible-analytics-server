@@ -22,16 +22,12 @@ const mangaVolumeSchema = new Schema(
         type: String,
         required: true
     },
-    language: {
-        type: String,
-        required: true,
-    },
     description: {
         type: String,
         required: true
     },
-    releaseYear: {
-        type: Number,
+    releaseDate: {
+        type: String,
         required: true
     }
   },

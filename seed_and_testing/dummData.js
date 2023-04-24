@@ -216,34 +216,200 @@ const sportCardArray = [
     },
 ]
 
-module.exports = {setArray, cardArray, playerArray, sportCardArray};
+const volumeArray = [
+    {
+        title: "Naruto",
+        mangaType: "manga",
+        publisher: "Viz & Shueisha",
+        issueCount: 72,
+        imageUrl: "https://comicvine.gamespot.com/a/uploads/scale_large/6/67663/3232072-01.jpg",
+        description: "Naruto is a young shinobi with an incorrigible knack for mischief. He's got a while sense of humor, but Naruto is completely serious about his mission to be the world's greatest ninja!",
+        releaseDate: "March 3rd, 2000"
+    },
+    {
+        title: "Attack On Titan",
+        mangaType: "manga",
+        publisher: "Kodansha",
+        issueCount: 34,
+        imageUrl: "https://comicvine.gamespot.com/a/uploads/scale_large/6/67663/3506326-01.jpg",
+        description: "ren Jaeger lives in city surrounded by monolithic walls. Outside dwell human murdering Titans. For decades members of the Scouting Legion have been the only humans who dared to leave the safety of the walls and gather information on the Titans.",
+        releaseDate: "March 17th, 2010"
+    },
+    {
+        title: "Demon Slayer",
+        mangaType: "manga",
+        publisher: "Viz & Shueisha",
+        issueCount: 23,
+        imageUrl: "https://comicvine.gamespot.com/a/uploads/scale_large/6/67663/6497309-01.jpg",
+        description: "The life of Tanjiro Kamado, a kindhearted boy who sells coal for a living, changes one day after his family is murdered by a demon.",
+        releaseDate: "June 8th, 2016"
+    },
+    {
+        title: "Weekly Shonen Jump",
+        mangaType: "magazine",
+        publisher: "Shueisha",
+        issueCount: 2693,
+        imageUrl: "https://comicvine.gamespot.com/a/uploads/scale_large/3/38919/4940320-weekly%20shonen%20jump%201968%201.jpg",
+        description: "Weekly Shonen Jump launched in 1968 as Shonen Jump (少年ジャンプ), only becoming weekly and extending its name in 1969, and quickly established itself as one of the dominant magazines in the industry.",
+        releaseDate: "August 1st, 1968"
+    },
+    {
+        title: "Jujutsu Kaisen",
+        mangaType: "manga",
+        publisher: "Viz & Shueisha",
+        issueCount: 23,
+        imageUrl: "https://comicvine.gamespot.com/a/uploads/scale_large/6/67663/7166979-01.jpg",
+        description: "Although Yuji Itadori looks like your average teenager, his immense physical strength is something to behold! Every sports club wants him to join, but Itadori would rather hang out with the school outcasts in the Occult Research Club.",
+        releaseDate: "July 9th, 2018"
+    },
+    {
+        title: "Blue Lock",
+        mangaType: "manga",
+        publisher: "Kodansha",
+        issueCount: 23,
+        imageUrl: "https://comicvine.gamespot.com/a/uploads/scale_large/6/67663/7866128-01.jpg",
+        description: "After a disastrous defeat at the 2018 World Cup, Japan's team struggles to regroup. But what's missing? An absolute Ace Striker, who can guide them to the win. The Football Association is hell-bent on creating a striker who hungers for goals and thirsts for victory, and who can be the decisive instrument in turning around a losing match.",
+        releaseDate: "November 16th, 2018"
+    },
+]
+
+const mangaItems = [
+    {
+        title: "Complete Set (English)",
+        imageUrl: "https://http2.mlstatic.com/D_NQ_NP_980700-MLB47999906136_102021-O.jpg",
+    },
+    {
+        title: "Complete Set (Japanese)",
+        imageUrl: "https://i.ebayimg.com/images/g/s74AAOSw3~df2a56/s-l500.jpg",
+    },
+    {
+        title: "Box Set #1",
+        imageUrl: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421525822/naruto-2008-box-set-vol-s-1-27-9781421525822_hr.jpg",
+    },
+    {
+        title: "Box Set #2",
+        imageUrl: "https://i.ebayimg.com/images/g/YIsAAOSwByBjLQEp/s-l1600.jpg",
+    },
+    {
+        title: "Box Set #3",
+        imageUrl: "https://d3fa68hw0m2vcc.cloudfront.net/13e/140218708.jpeg",
+    },
+    {
+        title: "Singles & Partials",
+        imageUrl: "https://m.media-amazon.com/images/I/71QYLrc-IQL._AC_UF1000,1000_QL80_.jpg",
+    },
+    {
+        title: "2003 Limited Edition Holo Cover/5000",
+        imageUrl: "https://i.redd.it/igcbgbqoo0h51.jpg",
+    },
+]
+
+const consoleArray = [
+    {
+        consoleName: "Playstation 3",
+        company: "playstation",
+        imageUrl: "https://c4.wallpaperflare.com/wallpaper/604/831/703/playstation-3-black-sony-ps3-wallpaper-preview.jpg",
+        releaseDate: "November 11th, 2006",
+        description: "The PlayStation 3 (PS3) is a home video game console developed by Sony Interactive Entertainment. The successor to the PlayStation 2, it is part of the PlayStation brand of consoles.",
+        gameCount: 1224,
+    },
+    {
+        consoleName: "Playstation 4",
+        company: "playstation",
+        imageUrl: "https://wallpapercave.com/wp/wp3025432.jpg",
+        releaseDate: "November 29th, 2013",
+        description: "The PlayStation 4 (PS4) is a home video game console developed by Sony Interactive Entertainment. Announced as the successor to the PlayStation 3 in February 2013, it was launched on November 15, 2013, in North America, November 29, 2013 in Europe, South America and Australia, and on February 22, 2014 in Japan.",
+        gameCount: 344,
+    },
+    {
+        consoleName: "Playstation 2",
+        company: "playstation",
+        imageUrl: "https://sportshub.cbsistatic.com/i/2022/12/24/9f5819d2-1578-46b1-ad8f-85302f99e190/ps2-console.png",
+        releaseDate: "November 24th, 2000",
+        description: "The PlayStation 2 (PS2) is a home video game console developed and marketed by Sony Computer Entertainment. It was first released in Japan on 4 March 2000, in North America on 26 October 2000, in Europe on 24 November 2000, and in Australia on 30 November 2000.",
+        gameCount: 643,
+    },
+    {
+        consoleName: "Xbox 360",
+        company: "xbox",
+        imageUrl: "https://i0.wp.com/www.thexboxhub.com/wp-content/uploads/2021/04/Xbox-360-Red-Ring.jpeg?fit=850%2C500&ssl=1",
+        releaseDate: "November 22nd, 2005",
+        description: "The Xbox 360 is a home video game console developed by Microsoft. As the successor to the original Xbox, it is the second console in the Xbox series. It competed with Sony's PlayStation 3 and Nintendo's Wii as part of the seventh generation of video game consoles.",
+        gameCount: 908,
+    },
+    {
+        consoleName: "GameBoy Color",
+        company: "nintendo",
+        imageUrl: "https://cdn.vox-cdn.com/thumbor/rAYIm9uTB3MxsLrryT19o61B9SA=/0x0:2040x1360/1200x800/filters:focal(842x521:1168x847)/cdn.vox-cdn.com/uploads/chorus_image/image/61892721/jbareham_180921_ply0802_0046_02.0.jpg",
+        releaseDate: "November 18th, 1998",
+        description: "The Game Boy Color (commonly abbreviated as GBC) is a handheld game console, manufactured by Nintendo, which was released in Japan on October 21, 1998 and to international markets that November. It is the successor to the Game Boy and is part of its product line.",
+        gameCount: 876,
+    },
+    {
+        consoleName: "Nintendo 64",
+        company: "nintendo",
+        imageUrl: "https://i.pcmag.com/imagery/lineups/00f5kSelgQ4S3dvLYv5KgAE-2..v1624388991.jpg",
+        releaseDate: "September 26th, 1996",
+        description: "The Nintendo 64 (N64) is a home video game console developed by Nintendo. The successor to the Super Nintendo Entertainment System, it was released on June 23, 1996 in Japan; September 26, 1996 in North America; and on March 1, 1997 in Europe and Australia.",
+        gameCount: 324,
+    },
+    {
+        consoleName: "Xbox One",
+        company: "xbox",
+        imageUrl: "https://i.insider.com/5d6985282e22af41f8198115?width=700",
+        releaseDate: "November 22nd, 2013",
+        description: "The Xbox One is a home video game console developed by Microsoft. Announced in May 2013, it is the successor to Xbox 360 and the third console in the Xbox series. It was first released in North America, parts of Europe, Australia, and South America in November 2013 and in Japan, China, and other European countries in September 2014.",
+        gameCount: 344,
+    },
+]
+
+const gameArray = [
+    {
+        itemType: "game",
+        title: "Call of Duty Modern Warfare 3",
+        imageUrl: "https://m.media-amazon.com/images/I/71gGnVp5uwL.jpg",
+        releaseDate: 2011,
+    },
+    {
+        itemType: "game",
+        title: "Grand Theft Auto V",
+        imageUrl: "https://m.media-amazon.com/images/I/91egGvTN7zL.jpg",
+        releaseDate: 2013,
+    },
+    {
+        itemType: "game",
+        title: "Halo 4",
+        imageUrl: "https://now.estarland.com/images/products/65/37865/190643.jpg",
+        releaseDate: 2012,
+    },
+    {
+        itemType: "game",
+        title: "Call of Duty Black Ops 2",
+        imageUrl: "https://media.gamestop.com/i/gamestop/10139718/Call-of-Duty-Black-Ops-Collection-1-3---Xbox-360",
+        releaseDate: 2012,
+    },
+]
+
+module.exports = {setArray, cardArray, playerArray, sportCardArray, volumeArray, mangaItems, consoleArray, gameArray};
 
 // itemType: {
 //     type: String,
-//     required: true,
+//     required: true
 // },
-// playerName: {
-//   type: String,
-//   required: true,
+// title: {
+// type: String,
+// required: true,
 // },
-// cardNumber: {
-//   type: Number,
-//   required: true,
+// imageUrl: {
+// type: String,
+// required: true
 // },
-// setName: {
+// consoleId: {type: Schema.Types.ObjectId, ref: "VideoConsole"},
+// consoleName: {
 //     type: String,
 //     required: true
 // },
-// cardType: {
-//   type: String,
-//   required: true,
-// },
-// imageUrl: {
-//     type: String,
-//     required: true,
-//     unique: true
-// },
-// sport: {
-//     type: String,
+// releaseDate: {
+//     type: Number,
 //     required: true
 // }

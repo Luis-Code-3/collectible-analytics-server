@@ -12,6 +12,7 @@ var tcgRotuer = require('./routes/tcg');
 var videogamesRouter = require('./routes/videogames');
 var mangaRouter = require('./routes/manga');
 var sportcardRouter = require('./routes/sportcard');
+var searchRouter = require('./routes/search');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/tcg', tcgRotuer);
 app.use('/videogames', videogamesRouter);
 app.use('/manga', mangaRouter);
 app.use('/sportcards', sportcardRouter);
+app.use('/search', searchRouter);
 
 app.use(function(req, res, next) {
     next(createError(404));

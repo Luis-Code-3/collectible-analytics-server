@@ -3,15 +3,17 @@ const { Schema, model } = require("mongoose");
 const pokemonTransactionsSchema = new Schema(
   {
     card_id: {type: Schema.Types.ObjectId, ref: "PokemonCard"},
+    title: {
+    type: String,
+    required: true
+    },
     marketplace: {
     type: String,
     required: true
     },
-    gradeName: {
+    grade: {
       type: String,
-    },
-    gradeNumber: {
-      type: Number,
+      required: true
     },
     salePrice: {
         type: Number,
