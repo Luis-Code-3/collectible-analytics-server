@@ -63,8 +63,8 @@ router.post('/login', (req,res) => {
       }
 
       if(bcrypt.compareSync(password, foundUser.password)) {
-        const accessToken  = jwt.sign({_id: createdUser._id, username: createdUser.username}, process.env.SECRET);
-        res.json({accessToken, message: `Welcome ${createdUser.username}`});
+        const accessToken  = jwt.sign({_id: foundUser._id, username: foundUser.username}, process.env.SECRET);
+        res.json({accessToken, message: `Welcome ${foundUser.username}`});
       } else {
         return res.status(401).json({ message: "Email or Password is incorrect!!!" });
       }
@@ -74,7 +74,7 @@ router.post('/login', (req,res) => {
     })
 });
 
-router.get('/verify', isAuthenticated, (req, res) => {
+router.post('/verify', isAuthenticated, (req, res) => {
   return res.status(200).json(req.user);
 })
 
