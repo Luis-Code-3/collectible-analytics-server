@@ -7,6 +7,7 @@ const VideoGame = require('../models/games/VideoGame.model');
 const MangaItem = require('../models/manga/MangaItem.model');
 const SportCard = require('../models/sports/SportCard.model');
 const PokemonCard = require('../models/tcg/PokemonCard.model');
+const Reports = require('../models/users/Reports.model')
 const isAuthenticated = require('../middleware/isAuthenticated')
 
 /* GET users listing. */
@@ -81,6 +82,58 @@ router.post('/login', (req,res) => {
 router.post('/verify', isAuthenticated, (req, res) => {
   return res.status(200).json(req.user);
 })
+
+router.post('/report/:itemType/:itemId/:tranId', (req, res) => {
+  const {reason, userId} = req.body;
+  const {itemType, itemId, tranId} = req.params
+  let formattedItemType;
+  switch (itemType) {
+    case "trading-cards":
+        formattedItemType = "tcg";
+        break;
+    case "manga":
+        formattedItemType = "manga";
+        break;
+    case "sports-cards":
+        formattedItemType = "sports";
+        break;
+    case "video-games":
+        formattedItemType = "game";
+        break;
+    default:
+        null
+}
+  // console.log("REASON:",reason);
+  // console.log("USER ID:",userId);
+  // console.log("ITEM TYPE:",itemType);
+  // console.log("ITEM ID:",itemId);
+  // console.log("TRAN ID:",tranId);
+  Reports.findOne({tranId: tranId, userId: userId})
+    .then((foundReport) => {
+      //console.log("foundReport:",foundReport);
+      if (foundReport) {
+        res.json({message: "Already submitted a report for this transaction"})
+        return;
+      }
+
+      Reports.create({
+        tranId,
+        itemId,
+        itemType: formattedItemType,
+        userId,
+        reason,
+      })
+      .then((createdReport) => {
+        res.json({message: "Submitted a report for this transaction"})
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+});
 
 
 
