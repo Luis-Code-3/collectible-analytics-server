@@ -18,8 +18,12 @@ const userSchema = new Schema(
     },
     gameWatchlist: [{type: Schema.Types.ObjectId, ref: "VideoGame"}],
     tcgWatchlist: [{type: Schema.Types.ObjectId, ref: "PokemonCard"}],
-    mangaWatchlist: [{type: Schema.Types.ObjectId, ref: "MangaIssue"}],
+    mangaWatchlist: [{type: Schema.Types.ObjectId, ref: "MangaItem"}],
     sportWatchlist: [{type: Schema.Types.ObjectId, ref: "SportCard"}],
+    gameCollection: [{type: Schema.Types.ObjectId, ref: "VideoGame"}],
+    tcgCollection: [{type: Schema.Types.ObjectId, ref: "PokemonCard"}],
+    mangaCollection: [{type: Schema.Types.ObjectId, ref: "MangaItem"}],
+    sportCollection: [{type: Schema.Types.ObjectId, ref: "SportCard"}],
     submissions: [{type: Schema.Types.ObjectId, ref: "Submissions"}]
   },
   {

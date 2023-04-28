@@ -13,6 +13,8 @@ var videogamesRouter = require('./routes/videogames');
 var mangaRouter = require('./routes/manga');
 var sportcardRouter = require('./routes/sportcard');
 var searchRouter = require('./routes/search');
+var watchlistRouter = require('./routes/watchlist')
+var collectionRouter = require('./routes/collection')
 
 var app = express();
 
@@ -38,6 +40,8 @@ app.use('/videogames', videogamesRouter);
 app.use('/manga', mangaRouter);
 app.use('/sportcards', sportcardRouter);
 app.use('/search', searchRouter);
+app.use('/watchlist', watchlistRouter);
+app.use('/collection', collectionRouter);
 
 app.use(function(req, res, next) {
     next(createError(404));

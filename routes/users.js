@@ -3,6 +3,10 @@ var router = express.Router();
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Users = require('../models/users/Users.model');
+const VideoGame = require('../models/games/VideoGame.model');
+const MangaItem = require('../models/manga/MangaItem.model');
+const SportCard = require('../models/sports/SportCard.model');
+const PokemonCard = require('../models/tcg/PokemonCard.model');
 const isAuthenticated = require('../middleware/isAuthenticated')
 
 /* GET users listing. */
@@ -77,5 +81,7 @@ router.post('/login', (req,res) => {
 router.post('/verify', isAuthenticated, (req, res) => {
   return res.status(200).json(req.user);
 })
+
+
 
 module.exports = router;
