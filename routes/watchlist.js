@@ -29,7 +29,7 @@ router.get('/watchlist/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'Item is already being watched'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item is now being watched'})
         }
         
@@ -50,7 +50,7 @@ router.get('/watchlist/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'Item is already being watched'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item is now being watched'})
         }
         
@@ -71,7 +71,7 @@ router.get('/watchlist/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'Item is already being watched'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item is now being watched'})
         }
         
@@ -92,7 +92,7 @@ router.get('/watchlist/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'Item is already being watched'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item is now being watched'})
         }
         
@@ -115,7 +115,7 @@ router.get('/watchlist/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'User not found'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item removed from watchlist'})
         }
         
@@ -136,7 +136,7 @@ router.get('/watchlist/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'User not found'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item removed from watchlist'})
         }
         
@@ -157,7 +157,7 @@ router.get('/watchlist/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'User not found'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item removed from watchlist'})
         }
         
@@ -178,7 +178,7 @@ router.get('/watchlist/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'User not found'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item removed from watchlist'})
         }
         

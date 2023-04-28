@@ -106,7 +106,7 @@ router.get('/is-collecting/trading-cards/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'Item is already collected'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item is now being collected'})
         }
         
@@ -127,7 +127,7 @@ router.get('/is-collecting/trading-cards/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'Item is already collected'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item is now being collected'})
         }
         
@@ -148,7 +148,7 @@ router.get('/is-collecting/trading-cards/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'Item is already collected'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item is now being collected'})
         }
         
@@ -169,7 +169,7 @@ router.get('/is-collecting/trading-cards/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'Item is already collected'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item is now being collected'})
         }
         
@@ -192,7 +192,7 @@ router.get('/is-collecting/trading-cards/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'User not found'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item removed from collection'})
         }
         
@@ -213,7 +213,7 @@ router.get('/is-collecting/trading-cards/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'User not found'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item removed from collection'})
         }
         
@@ -234,7 +234,7 @@ router.get('/is-collecting/trading-cards/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'User not found'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item removed from collection'})
         }
         
@@ -255,7 +255,7 @@ router.get('/is-collecting/trading-cards/:userId', (req, res) => {
         if(!foundUser) {
           res.json({message: 'User not found'})
         } else {
-          console.log(foundUser);
+        //   console.log(foundUser);
           res.json({message: 'Item removed from collection'})
         }
         

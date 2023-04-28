@@ -38,7 +38,7 @@ router.post('/signup', (req, res) => {
           password: hashedPassword
         })
           .then((createdUser) => {
-            console.log(createdUser);
+            //console.log(createdUser);
             const accessToken  = jwt.sign({_id: createdUser._id, username: createdUser.username}, process.env.SECRET);
             res.json({accessToken, message: `Welcome ${createdUser.username}`});
           })
