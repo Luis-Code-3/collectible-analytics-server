@@ -31,7 +31,7 @@ console.log('FRONTEND_URI:', process.env.FRONTEND_URI);
 
 app.use(
     cors({
-      origin: [process.env.FRONTEND_URI]  // <== URL of our future React app
+      origin: ['https://eclectic-klepon-7221c8.netlify.app']  // <== URL of our future React app
     })
 );
 
