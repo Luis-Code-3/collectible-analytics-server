@@ -27,11 +27,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-console.log('FRONTEND_URI:', process.env.FRONTEND_URI);
+// console.log('FRONTEND_URI:', process.env.FRONTEND_URI);
 
 app.use(
     cors({
-      origin: ['https://eclectic-klepon-7221c8.netlify.app']  // <== URL of our future React app
+      origin: [process.env.FRONTEND_URI]  // <== URL of our future React app
     })
 );
 
