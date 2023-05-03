@@ -21,7 +21,7 @@ const pokemonCardSchema = new Schema(
       required: true,
     },
     cardNumber: {
-      type: Number,
+      type: String,
       required: true,
     },
     setId: {type: Schema.Types.ObjectId, ref: "PokemonSet"},

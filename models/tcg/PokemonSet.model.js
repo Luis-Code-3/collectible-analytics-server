@@ -25,12 +25,12 @@ const pokemonSetSchema = new Schema(
     },
     setCount: {
         type: Number,
-        required: true
+        
     },
     cards_id: [{type: Schema.Types.ObjectId, ref: "PokemonCard"}],
     setYear: {
         type: Number,
-        required: true
+        
     }
   },
   {
