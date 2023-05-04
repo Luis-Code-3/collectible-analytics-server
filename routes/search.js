@@ -76,8 +76,8 @@ router.get('/item-sales/:itemType/:itemId', async (req, res) => {
     }
 });
 
-router.get('/similar-items/:itemType', async (req, res) => {
-    const {itemType} = req.params;
+router.get('/similar-items/:itemType/:itemId', async (req, res) => {
+    const {itemType, itemId} = req.params;
 
     let ItemModel;
 
@@ -99,8 +99,16 @@ router.get('/similar-items/:itemType', async (req, res) => {
     }
 
     try {
-        const item = await ItemModel.find().limit(10);
-        res.json(item)
+        const item = await ItemModel.findById(itemId);
+        let setItems;
+        if (itemType === "tcg" || itemType === "sports") {
+            setItems = await ItemModel.find({setName: item.setName}).limit(10);
+        } else if (itemType === "manga") {
+            setItems = await ItemModel.find({volumeName: item.volumeName}).limit(10);
+        } else if (itemType === "videogames") {
+            setItems = await ItemModel.find({consoleName: item.consoleName}).limit(10);
+        }
+        res.json(setItems)
     } catch (error) {
         res.status(500).json({ error: "An error occurred while fetching the transactions" });
     }
